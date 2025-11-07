@@ -1,1 +1,571 @@
-{}
+{
+    "totalMark": 23,
+    "wsosSections": {
+        "1": "Work organization and management",
+        "2": "Communication and interpersonal skills",
+        "3": "Design implementation",
+        "4": "Front-end development",
+        "5": "Back-end development"
+    },
+    "subCriterions": [
+        {
+            "name": "Database",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "DB-dump is provided and contains FK-constraints and correct columns",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "extraDescription": "0.25 given if DB-dump is provided but not correctly containing FK-constraints",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "ER diagram schema is provided",
+                    "maxMark": 0.25,
+                    "wsosSection": 2,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The CSV data has been imported into the database.",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "judgement",
+                    "description": "Database column type is reasonable defined",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "judgementScoreDescription": [
+                        "All columns use string type or text type",
+                        "Columns are basically in their related types. But numbers for int/float may not be optimized for operation.",
+                        "Columns are in their related types. For example, int, float, text, boolean, JSON. And are in proper length.",
+                        "Columns are in their related types. And the length of each type matches the use case. Status column are easy to understand and maintained. Including straightforward column value, or with comments."
+                    ]
+                },
+                {
+                    "type": "judgement",
+                    "description": "DB structure is normalized",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "judgementScoreDescription": [
+                        "Not normalized, a lot of redundant data/fields",
+                        "Normalized with second normal form",
+                        "Normalized with third normal form (partial)",
+                        "Normalized with third normal form (full)"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "The login page is available",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is not possible to access the application pages without authentication",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Except for the Login page. Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Login is only possible using email or phone number and password",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "After logging in, the user is redirected to the categories page",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Test accounts have been created",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "extraDescription": "admin1@gmail.com and admin2@gmail.com. Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "There is an option to log out of the account",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The error message for invalid login data contains only a general phrase",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "extraDescription": "Without specifying particular attributes",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Categories",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "A page with the list of bicycle categories has been implemented",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Only the categories of the authorized user are displayed",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to create a new category",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "An existing category can be edited",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is not possible to save a category without specifying a name",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "A category without bicycles can be deleted",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Bicycles",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "A page with the list of bicycles has been implemented",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The page displays all bicycles related to the selected category",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Bicycles can be added",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "The name and quantity are required",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The created bicycles (copies) are displayed in the list according to the specified quantity",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Each bicycle must have a unique slug based on its name",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "If a bicycle with the same name already exists, a free sequential number is added at the end. For example: super-bicycle → super-bicycle-01. Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to edit the attributes of a selected bicycle",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The status of a selected bicycle can be changed",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "If a bicycle is already booked or rented, its status cannot be changed to 'unavailable'",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "A bicycle can only be deleted if its status is 'unavailable'",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Deduct 0.25 for a mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Validation error messages are displayed when performing actions",
+                    "maxMark": 1,
+                    "wsosSection": 5,
+                    "extraDescription": "Deduct 0.25 for a missing message",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The coordinates (x, y) of the bicycle image center are determined automatically and randomly",
+                    "maxMark": 0.75,
+                    "wsosSection": 5,
+                    "extraDescription": "With an offset of 10px from each other on a 5000x5000 map. They must not overlap. Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Rent Conditions",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "It is possible to add rental conditions for a category",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "In the condition, weather values can be set from the provided list (one or more)",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Deduct 0.25 for a mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "In the condition, a minimum user rating can be set",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tariffs",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "It is possible to view the list of tariffs",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to add a tariff for each category (name, type, price)",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Deduct 0.25 for a mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "If the dynamic type is selected, a minimum and maximum price can be set",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is not allowed to create duplicate tariffs with the same type and price",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "A tariff can be archived",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "It must be marked differently in the list. Deduct 0.25 for a mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "History",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "It is possible to view the rental history of a bicycle on a separate page",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The list displays the required data for each bicycle",
+                    "maxMark": 0.75,
+                    "wsosSection": 5,
+                    "extraDescription": "Renter's name and phone number, rental start date, rental end date, wear percentage at the end of the rental with user-provided photos, final price, given rating (nullable). Deduct 0.25 if missing.",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The list can be filtered by date",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The list is displayed with pagination",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "10 values per page. Control buttons: Previous, Next, Page numbers (with ellipsis if there are more than 3 pages). Deduct 0.25 for each absence or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The list can be exported to CSV",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "extraDescription": "When clicking the Export button",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "The exported list contains all data",
+                    "maxMark": 0.75,
+                    "wsosSection": 5,
+                    "extraDescription": "The filter is applied. The file name is: exports_history-Y-m-d.csv (for example, exports_history_2025-09-06.csv). Deduct 0.25 for each error or mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Applications",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "A page displaying moderation requests has been implemented",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "Each request contains the required data",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Name, Phone, Email. Deduct 0.25 if missing",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to approve a request",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to reject a request",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Promo codes",
+            "aspects": [
+                {
+                    "type": "measurement",
+                    "description": "It is possible to view all created promo codes for the selected category",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to add a promo code for a category",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "Expiration time, free usage minutes, or discount percentage. Deduct 0.25 if missing or mismatched",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "A promo code consists of a random string",
+                    "maxMark": 0.5,
+                    "wsosSection": 5,
+                    "extraDescription": "From 5 to 10 characters, only letters and digits (uppercase). Deduct 0.25 for a mismatch",
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                },
+                {
+                    "type": "measurement",
+                    "description": "It is possible to delete a promo code",
+                    "maxMark": 0.25,
+                    "wsosSection": 5,
+                    "calculation": {
+                        "type": "pass-or-fail"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "UI/UX",
+            "aspects": [
+                {
+                    "type": "judgement",
+                    "description": "Page structure",
+                    "maxMark": 0.75,
+                    "wsosSection": 3,
+                    "judgementScoreDescription": [
+                        "All pages seem empty or overloaded",
+                        "Several pages seem empty or overloaded",
+                        "One page seems empty or overloaded",
+                        "No page seems empty or overloaded"
+                    ]
+                },
+                {
+                    "type": "judgement",
+                    "description": "Displaying information/data",
+                    "maxMark": 0.75,
+                    "wsosSection": 3,
+                    "judgementScoreDescription": [
+                        "The information is displayed poorly, or in many places it is unclear what it is about",
+                        "The information is displayed well on all pages except two; apart from these two pages, it is always clear what they are and what they relate to",
+                        "The information is displayed well on all pages except one; apart from this page, it is always clear what it is and what it relates to",
+                        "The information is displayed very well on all pages; it is always clear what they are and what they relate to"
+                    ]
+                }
+            ]
+        }
+    ]
+}
