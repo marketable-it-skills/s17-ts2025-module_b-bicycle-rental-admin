@@ -8,7 +8,7 @@ Server-side rendered admin panel for managing bicycle rental operations
 
 ## Task Origin
 
-This project task is based on the **TeamSkills 2025** competition **Module B test project**. The original task was updated, modularized, and standardized to form the basis of the project task repository within the Erasmus+ **"Marketable IT Skills: Integrating Real-World Challenges into Vocational Education"** project.
+This project task is based on the **TurkicSkills 2025** competition **Module B test project** submitted by **Agybay Mukhametzhan (KZ)** and **Denis Valentinovich (KZ)**. The original task was updated, modularized, and standardized to form the basis of the project task repository within the Erasmus+ **"Marketable IT Skills: Integrating Real-World Challenges into Vocational Education"** project.
 
 ## Content
 
